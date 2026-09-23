@@ -1,11 +1,11 @@
-import { NavLink, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+import { NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const links = [
-  { to: '/dashboard', label: 'Dashboard' },
-  { to: '/matches', label: 'Matches' },
-  { to: '/chat', label: 'Chat' },
-  { to: '/profile', label: 'Profile' },
+  { to: "/dashboard", label: "Dashboard" },
+  { to: "/matches", label: "Matches" },
+  { to: "/chat", label: "Chat" },
+  { to: "/profile", label: "Profile" },
 ];
 
 export default function Navbar() {
@@ -19,7 +19,20 @@ export default function Navbar() {
       {/* Desktop */}
       <nav className="hidden md:flex items-center justify-between px-8 py-4 glass sticky top-0 z-40">
         <div className="flex items-center gap-10">
-          <span className="text-lg font-bold gradient-text">SkillSwap</span>
+          {/* Logo */}
+          <div className="flex items-center gap-2.5">
+            <img
+              src="/ss.png"
+              alt="SkillSwap"
+              className="w-9 h-9 object-contain"
+            />
+
+            <span className="text-lg font-bold gradient-text">
+              SkillSwap
+            </span>
+          </div>
+
+          {/* Links */}
           <div className="flex items-center gap-1">
             {links.map((l) => (
               <NavLink
@@ -27,7 +40,9 @@ export default function Navbar() {
                 to={l.to}
                 className={({ isActive }) =>
                   `px-4 py-2 rounded-lg text-sm font-medium transition ${
-                    isActive ? 'bg-white/10 text-white' : 'text-neutral-400 hover:text-white hover:bg-white/5'
+                    isActive
+                      ? "bg-white/10 text-white"
+                      : "text-neutral-400 hover:text-white hover:bg-white/5"
                   }`
                 }
               >
@@ -36,18 +51,30 @@ export default function Navbar() {
             ))}
           </div>
         </div>
+
+        {/* Right side */}
         <div className="flex items-center gap-4">
           <div className="pill glass flex items-center gap-1.5">
             <span>🪙</span>
-            <span className="font-semibold">{profile.skillcoin_balance}</span>
+            <span className="font-semibold">
+              {profile.skillcoin_balance}
+            </span>
           </div>
+
           <button
-            onClick={() => navigate('/profile')}
+            onClick={() => navigate("/profile")}
             className="w-9 h-9 rounded-full bg-gradient-to-br from-violet-500 to-indigo-500 flex items-center justify-center text-sm font-semibold"
           >
             {profile.full_name.charAt(0)}
           </button>
-          <button onClick={() => { logout(); navigate('/'); }} className="text-sm text-neutral-500 hover:text-white transition">
+
+          <button
+            onClick={() => {
+              logout();
+              navigate("/");
+            }}
+            className="text-sm text-neutral-500 hover:text-white transition"
+          >
             Chiqish
           </button>
         </div>
@@ -59,7 +86,11 @@ export default function Navbar() {
           <NavLink
             key={l.to}
             to={l.to}
-            className={({ isActive }) => `text-xs flex flex-col items-center gap-1 ${isActive ? 'text-violet-400' : 'text-neutral-500'}`}
+            className={({ isActive }) =>
+              `text-xs flex flex-col items-center gap-1 ${
+                isActive ? "text-violet-400" : "text-neutral-500"
+              }`
+            }
           >
             <span>{l.label}</span>
           </NavLink>

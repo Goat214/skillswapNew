@@ -1,0 +1,72 @@
+import type { Profile } from '../types';
+
+export const SKILL_SUGGESTIONS = [
+  'JavaScript', 'React', 'Python', 'TypeScript', 'Node.js', 'Photoshop',
+  'Figma', 'UI/UX', 'English', 'Mathematics', 'Graphic Design',
+  'Public Speaking', 'Excel', 'SQL', 'Machine Learning', 'Video Editing',
+];
+
+export const DEMO_PASSWORD_NOTE = 'demo'; // any password works in demo mode
+
+export const seedProfiles: Profile[] = [
+  {
+    id: 'demo-vali',
+    full_name: 'Vali Karimov',
+    email: 'vali@fstu.uz',
+    university: 'FSTU',
+    faculty: 'Computer Engineering',
+    bio: "Backend'ga qiziqaman, React o'rganmoqchiman.",
+    skillcoin_balance: 80,
+    rating: 4.7,
+    sessions_completed: 9,
+    students_helped: 6,
+    teaching_skills: ['Python', 'English'],
+    learning_skills: ['React'],
+    created_at: new Date().toISOString(),
+  },
+  {
+    id: 'demo-ali',
+    full_name: 'Ali Yusupov',
+    email: 'ali@fstu.uz',
+    university: 'FSTU',
+    faculty: 'Design',
+    bio: 'Dizayner, JavaScript o\'rganib frontendga o\'tmoqchiman.',
+    skillcoin_balance: 65,
+    rating: 4.9,
+    sessions_completed: 14,
+    students_helped: 10,
+    teaching_skills: ['UI/UX', 'Figma'],
+    learning_skills: ['JavaScript'],
+    created_at: new Date().toISOString(),
+  },
+  {
+    id: 'demo-madina',
+    full_name: 'Madina Tosheva',
+    email: 'madina@fstu.uz',
+    university: 'FSTU',
+    faculty: 'Applied Mathematics',
+    bio: 'Matematika va ingliz tili o\'qitaman.',
+    skillcoin_balance: 120,
+    rating: 4.8,
+    sessions_completed: 20,
+    students_helped: 15,
+    teaching_skills: ['English', 'Mathematics'],
+    learning_skills: ['Figma'],
+    created_at: new Date().toISOString(),
+  },
+  {
+    id: 'demo-jasur',
+    full_name: 'Jasur Rakhimov',
+    email: 'jasur@fstu.uz',
+    university: 'FSTU',
+    faculty: 'Software Engineering',
+    bio: 'React va TypeScript bilan ishlayman.',
+    skillcoin_balance: 95,
+    rating: 4.6,
+    sessions_completed: 7,
+    students_helped: 5,
+    teaching_skills: ['React', 'TypeScript'],
+    learning_skills: ['Python', 'Machine Learning'],
+    created_at: new Date().toISOString(),
+  },
+];
